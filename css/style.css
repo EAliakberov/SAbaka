@@ -1,0 +1,332 @@
+body{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    font-size: 15px;
+    margin: 0 auto;
+    ;
+}
+
+.abaka{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    transform: translate(100%, 0);
+
+}
+
+.game-menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translate(-100%, 0);
+}
+
+.game-menu.active-frame{
+    transform: translate(0, 0);
+    display: block;
+}
+
+.abaka.active-frame{
+    transform: translate(0, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+.game-field{
+
+    display: flex;
+    padding: 0;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+.game-menu--buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+
+
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+
+    font-size: 20px;
+}
+
+.game-menu--buttons li{
+    padding: 0px;
+    margin: 0px;
+}
+
+.game-menu--buttons button{
+    font-size: 25px;
+    padding: 30px;
+    text-transform: uppercase;
+    margin: 2px;
+    border: 5px solid black;
+    background-color: #FFEEAA;
+    transition: transform 0.05s;
+}
+
+.game-menu--buttons button:hover{
+    transform: scale(1.2) rotate(5deg);
+}
+
+.game-menu--buttons button:active{
+    transform: scale(1.1) rotate(2deg);
+}
+
+.player-interface{
+    width: 100%;
+    height: 100%;
+}
+
+.player{
+    display: flex;
+    flex-direction: column;
+
+
+    border: 2px solid gray;
+    padding: 2px;
+    margin-right: 5px;
+    margin-top: -2px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.player.active{
+    background-color: rgba(255,255,210,1);
+    border: 2px solid rgba(150,150,150,1);
+    transform: scale(1.1);
+    transition: 0.2s;
+    z-index:10;
+}
+
+.header-div{
+    display: flex;
+    align-items: center;
+    margin-bottom: auto;
+}
+
+.player-name{
+    max-width: 145px;
+    word-break: break-word;
+    overflow: hidden;
+    text-wrap: wrap;
+    text-align: left;
+
+    margin: auto;
+    margin-left: 10px;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+
+.score-label,
+.school-label,
+.bonus-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.game-school,
+.game-scores{
+    border: none;
+}
+
+.game-school td,
+.game-scores td{
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 0;
+    min-width: 30px;
+}
+
+.game-school td:first-child,
+.game-scores td:first-child{
+    background-color: rgba(0,0,0,0.2);
+    min-width: 60px;
+}
+
+.game-school td:last-child,
+.game-scores td:last-child,
+.game-scores tr:last-child{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.game-buttons-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    margin: 10px 10px;
+    padding: 5px;
+    //border: 2px solid gray;
+    border-radius: 4px;
+}
+
+.game-buttons-list button{
+    position: relative;
+    min-width: 50px;
+    height:50px;
+    margin: 2px;
+    padding: 10px;
+
+    font-size: 20px;
+    text-shadow: 0px 0px 15px white;
+    border: none;
+    outline: 1px solid #79F;
+    outline-offset: 1px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background: linear-gradient(to top, #59F, #7AF);
+    background-size: 30px;
+}
+
+.game-buttons-list button:hover{
+    outline: 1px solid #CCA;
+    outline-offset: 1px;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 0 0 2px 2px yellow;
+    background: radial-gradient(#FFA, #AAA);
+}
+
+
+.dices{
+    display: flex;
+    justify-content: center;
+}
+
+.dice{
+    position: relative;
+    display: flex;
+    height: 160px;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 2px;
+    margin: 2px;
+}
+
+.dice .up,
+.dice .down{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    align-items: middle;
+    width: 50px;
+    height:50px;
+    background: linear-gradient(grey, lightgray);
+}
+
+.dice-button{
+    position: relative;
+    //width: 50px;
+    height:50px;
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    outline: 1px solid #79F;
+    outline-offset: 1px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background: linear-gradient(to top, #59F, #7AF);
+    background-size: 30px;
+}
+
+.dice-button:hover{
+    outline: 1px solid #CCA;
+    outline-offset: 1px;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 2px yellow;
+    background: radial-gradient(#FFA, #AAA);
+}
+
+.dice-button:active{
+    outline: 1px solid black;
+    outline-offset: 1px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px 1px black inner;
+    background: radial-gradient(#FFA, #AAA);
+}
+
+
+.dice-button img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height:50px;
+    filter: color(red);
+}
+
+.dice-button:hover img{
+    filter: invert(1) opacity(0.8);
+}
+
+.throw-buttons{
+    position: relative;
+    display: flex;
+    min-width: 50px;
+    height: 160px;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 2px;
+
+    margin: 2px;
+}
+
+.throw-buttons .dice-button{
+    position: relative;
+    min-width: 50px;
+    height:50px;
+    margin: 2px;
+    padding: 10px;
+
+    font-size: 20px;
+    text-shadow: 0px 0px 15px white;
+    border: none;
+    outline: 1px solid #79F;
+    outline-offset: 1px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background: linear-gradient(to top, #59F, #7AF);
+    background-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
